@@ -1,6 +1,3 @@
-# https://repl.it/talk/learn/Building-AI-Neural-Networks-for-beginners/8156
-#copied code from predict.py in order to run on repl.iter
-
 import numpy as np
 import display
 from NN import Neural_Network
