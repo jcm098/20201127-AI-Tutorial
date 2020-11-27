@@ -19,7 +19,7 @@ NN.configureNN(400, 25, 10,
                W2 = trW2)
 
 # Predicting a class number of given input
-testNo = 1020; # any number between 0 and 4999 to test
+testNo = 4999; # any number between 0 and 4999 to test
 NN.predictClass(X[testNo])
 # Display output
 display.displayData(1, X, testNo, 'Predicted class: ' + str(np.argmax(np.round(NN.forward(X[testNo]))) + 1) )
