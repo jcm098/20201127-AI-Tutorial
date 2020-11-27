@@ -1,6 +1,3 @@
-# https://repl.it/talk/learn/Building-AI-Neural-Networks-for-beginners/8156
-#copied code from train.py in order to run on repl.iter
-
 # This code trains the Neural Network. In the end, you end up
 # with best-fit parameters (weights W1 and W2) for the problem in folder 'data'
 # and can use them to predict in predict.py
@@ -47,4 +44,3 @@ NN.saveWeights()
 # Checking the accuracy of Neural Network
 sel = np.random.permutation(5000)[1:1000] 
 NN.accuracy(X[sel], y[sel])
-
