@@ -1,7 +1,25 @@
 # https://repl.it/talk/learn/Building-AI-Neural-Networks-for-beginners/8156
+#copied code from predict.py in order to run on repl.iter
 
-#a bit more
+import numpy as np
+import display
+from NN import Neural_Network
 
-x=1
+NN = Neural_Network()
 
-y=2
+# Loading data
+X = np.loadtxt("data/X.in", comments="#", delimiter=",", unpack=False)
+y = np.loadtxt("data/y.in", comments="#", delimiter=",", unpack=False)
+trW1 = np.loadtxt("data/TrainedW1.in", comments="#", delimiter=",", unpack=False)
+trW2 = np.loadtxt("data/TrainedW2.in", comments="#", delimiter=",", unpack=False)
+
+# Configuring settings of Neural Network:
+NN.configureNN(400, 25, 10,
+               W1 = trW1, 
+               W2 = trW2)
+
+# Predicting a class number of given input
+testNo = 4999; # any number between 0 and 4999 to test
+NN.predictClass(X[testNo])
+# Display output
+display.displayData(1, X, testNo, 'Predicted class: ' + str(np.argmax(np.round(NN.forward(X[testNo]))) + 1) )
